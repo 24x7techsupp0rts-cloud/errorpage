@@ -5,29 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Activation Failed</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { font-family: Arial, sans-serif; background-color: #fff; color: #000; }
-    #loader { position: fixed; width: 100%; height: 100%; background-color: white; display: flex; justify-content: center; align-items: center; z-index: 9999; }
-    .spinner { border: 6px solid #f3f3f3; border-top: 6px solid #3498db; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    #main-content { display: none; padding: 20px; max-width: 800px; margin: 0 auto; }
-    .title { font-size: 32px; color: red; font-weight: bold; text-align: center; margin-bottom: 10px; }
-    .subtitle { font-size: 18px; text-align: center; margin-bottom: 20px; }
-    .phone-number { font-size: 20px; color: green; font-weight: bold; text-align: center; margin-bottom: 5px; }
-    .contact-note { text-align: center; font-size: 14px; margin-bottom: 20px; }
-    .issues { font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
-    .note { font-size: 14px; line-height: 1.4; margin-bottom: 10px; }
-    .error-info { font-size: 14px; line-height: 1.4; }
-    .footer { margin-top: 20px; font-weight: bold; font-size: 14px; text-align: center; }
+    /* Reset & base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* Loader Screen */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Main Content */
+    #main-content {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .title {
+      font-size: 32px;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .phone-number {
+      font-size: 20px;
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .contact-note {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .issues {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .note {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .error-info {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Responsive Adjustments */
     @media (max-width: 600px) {
-      .title { font-size: 8vw; }
-      .subtitle { font-size: 5vw; }
-      .phone-number { font-size: 6vw; }
-      .contact-note, .issues, .note, .error-info, .footer { font-size: 4vw; text-align: center; }
-      #main-content { padding: 5vw; }
+      .title {
+        font-size: 8vw;
+      }
+
+      .subtitle {
+        font-size: 5vw;
+      }
+
+      .phone-number {
+        font-size: 6vw;
+      }
+
+      .contact-note,
+      .issues,
+      .note,
+      .error-info,
+      .footer {
+        font-size: 4vw;
+        text-align: center;
+      }
+
+      #main-content {
+        padding: 5vw;
+      }
     }
   </style>
   <script>
+    // Show loader for 5 seconds
     window.addEventListener("load", function () {
       setTimeout(function () {
         document.getElementById("loader").style.display = "none";
@@ -37,12 +143,19 @@
   </script>
 </head>
 <body>
-  <div id="loader"><div class="spinner"></div></div>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Main Content -->
   <div id="main-content">
     <div class="title">Activation Failed</div>
     <div class="subtitle">Sorry, your code has failed to activate.</div>
+
     <div class="phone-number">+1 805-865-7171</div>
     <div class="contact-note">Contact the Support team to fix this issue immediately</div>
+
     <div class="issues">
       <b>Detected Issue:</b><br />
       1. <b>Code Expired.</b><br />
@@ -51,13 +164,16 @@
       4. <b>Your code is not generated in the Database.</b><br />
       5. <b>Network Security Firewall Compromised.</b>
     </div>
+
     <div class="note">
       <b>Note:</b> Repeated Failure May Lead to Expire Code. Do Not Try to Enter Your Code Again and Again.
     </div>
+
     <div class="error-info">
       <b>Error Code:</b> 00X00016FA<br />
       <b>Correlation ID:</b> c147654ad-41fg-ds7da-cfa9f5jhdjhsg
     </div>
+
     <div class="footer">
       Keep Your Activation Code Ready While Speaking To Customer Support.
     </div>
